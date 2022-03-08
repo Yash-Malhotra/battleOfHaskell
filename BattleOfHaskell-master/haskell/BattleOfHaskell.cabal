@@ -1,0 +1,54 @@
+cabal-version: 1.12
+
+-- This file has been generated from package.yaml by hpack version 0.33.0.
+--
+-- see: https://github.com/sol/hpack
+--
+-- hash: 295aee7ee3479db7c14e7f6066eb00d3a18f6f2e9768084a3758e2cdd4bdb68c
+
+name:           BattleOfHaskell
+version:        0.1.0.0
+build-type:     Simple
+
+library
+  exposed-modules:
+      BattleOfHaskell
+      Lib
+  other-modules:
+      Paths_BattleOfHaskell
+  hs-source-dirs:
+      src
+  build-depends:
+      base >=4.7 && <5
+    , tasty
+    , tasty-hunit
+  default-language: Haskell2010
+
+executable BattleOfHaskell-exe
+  main-is: Main.hs
+  other-modules:
+      Paths_BattleOfHaskell
+  hs-source-dirs:
+      app
+  ghc-options: -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      BattleOfHaskell
+    , base >=4.7 && <5
+    , tasty
+    , tasty-hunit
+  default-language: Haskell2010
+
+test-suite BattleOfHaskell-test
+  type: exitcode-stdio-1.0
+  main-is: Spec.hs
+  other-modules:
+      Paths_BattleOfHaskell
+  hs-source-dirs:
+      test
+  ghc-options: -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      BattleOfHaskell
+    , base >=4.7 && <5
+    , tasty
+    , tasty-hunit
+  default-language: Haskell2010

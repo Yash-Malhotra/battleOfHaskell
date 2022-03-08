@@ -1,0 +1,35 @@
+# TODO: Replace `my-project` everywhere in this file with your project name.
+name:                BattleOfHaskell
+version:             0.1.0.0
+
+dependencies:
+- base >= 4.7 && < 5
+- tasty
+- tasty-hunit
+
+library:
+  source-dirs: src
+
+executables:
+  BattleOfHaskell-exe:
+    main:                Main.hs
+    source-dirs:         app
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N
+    dependencies:
+    - BattleOfHaskell
+
+tests:
+  BattleOfHaskell-test:
+    main:                Spec.hs
+    source-dirs:         test
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N
+    dependencies:
+    - BattleOfHaskell
+    - tasty
+    - tasty-hunit
